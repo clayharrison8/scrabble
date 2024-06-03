@@ -26,7 +26,7 @@ const App = () => {
           .split("\n")
           .slice(CSV_HEADER_INDEX)
           .forEach((line) => {
-            const [word, score, date] = line.trim().toLowerCase().split(",");
+            const [word, , ] = line.trim().toLowerCase().split(",");
             if (
               word &&
               VALID_LETTERS_PATTERN.test(word) &&
