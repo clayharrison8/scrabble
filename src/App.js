@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./App.css";
 import savedWords from "./Words50.csv";
-import { fetchPreviousWords } from "./api";
+import { getRequest } from "./api";
 
 const VALID_LETTERS_PATTERN = /^[a-zA-Z]+$/;
 const CSV_HEADER_INDEX = 1;
@@ -50,7 +50,7 @@ const App = () => {
   }, []);
 
   const fetchPreviousData = useCallback(() => {
-    fetchPreviousWords()
+    getRequest('https://testapi.sail-dev.com/api/data/getworddata')
       .then((data) => {
         // Filtering invalid entries
         const filteredData = data.filter(

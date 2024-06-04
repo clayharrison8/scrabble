@@ -1,6 +1,6 @@
-export const fetchPreviousWords = async () => {
+export const getRequest = async (url) => {
     try {
-      const response = await fetch('https://testapi.sail-dev.com/api/data/getworddata');
+      const response = await fetch(url);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
